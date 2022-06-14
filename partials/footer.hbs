@@ -1,0 +1,40 @@
+<footer class="footer-section global-footer{{>partial_mode}}">
+	<div class="footer-wrap global-padding">
+		{{>members/subscribe_form}}
+		<div class="footer-container">
+			<div class="footer-content">
+				<div class="footer-logo">
+					{{>logo}}
+				</div>
+				{{#if @site.description}}
+				<p class="footer-description">{{@site.description}}</p>
+				{{/if}}
+			</div>
+			<div class="footer-nav">
+				<div class="footer-nav-column is-social">
+					<small>{{t "Social"}}</small>
+					<ul>
+						{{#if @site.facebook}}
+						<li><a href="{{facebook_url}}">{{>icons/social/facebook}}Facebook</a></li>
+						{{/if}}
+						{{#if @site.twitter}}
+						<li><a href="{{twitter_url}}">{{>icons/social/twitter}}Twitter</a></li>
+						{{/if}}
+						{{>footer_icons}}
+					</ul>
+				</div>
+				{{#if @site.secondary_navigation}}
+				{{navigation type="secondary"}}
+				{{/if}}
+			</div>
+			<div class="footer-copyright">
+				&copy; <a href="{{@site.url}}">{{@site.title}}</a> {{date format="YYYY"}}.
+				{{#if @custom.footer_copyright}}
+				{{{@custom.footer_copyright}}}
+				{{else}}
+				{{{t "Published with {ghost-link} and {theme-name}." ghost-link="<a href=\"https://ghost.org\" target=\"_blank\" rel=\"noopener noreferrer\">Ghost</a>" theme-name="<a href=\"https://fueko.net\" target=\"_blank\" rel=\"noopener noreferrer\">Basho</a>"}}}
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</footer>

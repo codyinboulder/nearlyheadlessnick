@@ -1,0 +1,96 @@
+{
+    "name": "basho",
+    "demo": "https://basho.fueko.net",
+    "version": "2.1.1",
+    "author": {
+        "name": "fueko",
+        "email": "hello@fueko.net",
+        "url": "https://fueko.net"
+    },
+    "keywords": [
+        "ghost-theme"
+    ],
+    "config": {
+        "posts_per_page": 6,
+        "card_assets": true,
+        "image_sizes": {
+            "s": {
+                "width": 300
+            },
+            "m": {
+                "width": 600
+            },
+            "l": {
+                "width": 1200
+            },
+            "xl": {
+                "width": 2000
+            }
+        },
+        "custom": {
+            "color_scheme": {
+                "type": "select",
+                "options": ["Light", "Dark", "Partial Dark", "Auto: Light/Dark", "Auto: Partial Dark/Dark" ],
+                "default": "Light"
+            },
+            "global_background_color_in_hex_string": {
+                "type": "text"
+            },
+            "fonts": {
+                "type": "select",
+                "options": ["System fonts", "Archivo + System fonts", "Bona Nova + Inter", "EB Garamond + Inter", "Inter", "Lato", "Lora + System fonts", "Nunito", "Oswald + Roboto", "Playfair + System fonts", "Poppins + Inter", "Raleway + System fonts", "Roboto", "Space Grotesk + Inter", "Sora + Inter", "Syne + Inter", "Work Sans + Inter"],
+                "default": "Inter"
+            },
+            "accent_color_buttons": {
+                "type": "boolean",
+                "default": true
+            },
+            "feed_images_orientation": {
+                "type": "select",
+                "options": ["Portrait", "Landscape", "Square", "Natural"],
+                "default": "Portrait"
+            },
+            "content_api_key_for_search": {
+                "type": "text"
+            },
+            "contact_form_endpoint": {
+                "type": "text"
+            },
+            "footer_copyright": {
+                "type": "text"
+            },
+            "hero_title_size_and_subscription_form_or_button": {
+                "type": "select",
+                "options": ["Large", "Medium", "Small", "Large + Subscription form", "Medium + Subscription form", "Small + Subscription form", "Large + Subscription button", "Medium + Subscription button", "Small + Subscription button"],
+                "default": "Large",
+                "group": "homepage"
+            },
+            "hero_title_text": {
+                "type": "text",
+                "group": "homepage"
+            },
+            "slider_size": {
+                "type": "select",
+                "options": ["Large", "Small"],
+                "default": "Small",
+                "group": "homepage"
+            },
+            "slider_images_orientation": {
+                "type": "select",
+                "options": ["Portrait", "Landscape", "Square", "Natural"],
+                "default": "Portrait",
+                "group": "homepage"
+            },
+            "feature_image_orientation": {
+                "type": "select",
+                "options": ["Portrait", "Landscape", "Square", "Natural"],
+                "default": "Portrait",
+                "group": "post"
+            },
+            "disqus_shortname": {
+                "type": "text",
+                "group": "post"
+            }
+        }
+    }
+}

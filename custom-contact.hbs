@@ -1,0 +1,25 @@
+{{!< default-custom}}
+{{#post}}
+<div class="custom-wrap{{>partial_mode}}">
+	{{#if feature_image}}
+	<div class="custom-image global-bg-image" style="background-image: url({{feature_image}})"></div>
+	{{/if}}
+	<div class="custom-container">
+		<div class="custom-logo-wrap">
+			<div class="custom-logo">
+				{{>logo}}
+			</div>
+		</div>
+		<div class="custom-content">
+			<form method="POST" action="{{@custom.contact_form_endpoint}}">
+				<h1 class="custom-title global-title">{{title}}</h1>
+				<input type="text" name="name" placeholder="{{t "Your name"}}" aria-label="{{t "Your name"}}" required>
+				<input type="email" name="email" placeholder="{{t "Your email address"}}" aria-label="{{t "Your email address"}}" required>
+				<label for="message">{{t "Your message"}}</label>
+				<textarea id="message" name="message" required></textarea>
+				<button class="global-button" type="submit">{{t "Send message"}}</button>
+			</form>
+		</div>
+	</div>
+</div>
+{{/post}}

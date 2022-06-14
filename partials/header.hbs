@@ -1,0 +1,17 @@
+<header class="header-section{{>partial_mode}}">
+	<div class="header-wrap global-padding">
+		<div class="header-logo">{{>logo}}</div>
+		<div class="header-nav{{#if @custom.accent_color_buttons}} is-button-accent-color{{/if}}">
+			{{>search is_mobile=true}}
+			<input id="toggle" class="header-checkbox" type="checkbox">
+			<label class="header-toggle" for="toggle">
+				<span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+				</span>
+			</label>
+		<nav>{{navigation}}</nav>
+	</div>
+</div>
+</header>

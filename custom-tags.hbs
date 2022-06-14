@@ -1,0 +1,41 @@
+{{!< default}}
+{{#post}}
+<div class="archive-section{{>partial_mode}}">
+	<h1 class="global-title">{{title}}</h1>
+	{{#if custom_excerpt}}
+	<p class="archive-excerpt global-excerpt">{{custom_excerpt}}</p>
+	{{/if}}
+</div>
+<div class="custom-archive loop-section global-padding">
+	<div class="global-subtitle">
+		<small class="global-subtitle-title">
+		{{{t "Explore our {start-bold}tags{end-bold}" start-bold="<span>" end-bold="</span>"}}}
+		</small>
+	</div>
+	{{#get "tags" limit="all" filter="visibility:public" include="count.posts" order="count.posts desc" as |tags|}}
+	{{#if tags}}
+	<div class="loop-wrap is-tags">
+		{{#foreach tags}}
+		<div class="item is-loop">
+			{{#if feature_image}}
+			<div class="item-image is-landscape global-image global-image-orientation global-radius">
+				<a href="{{url}}" class="global-link" aria-label="{{name}}"></a>
+				{{>images/archive_image archive_image=feature_image}}
+			</div>
+			{{/if}}
+			<div class="item-content">
+				<h2 class="item-title"><a href="{{url}}">{{name}}</a></h2>
+				<small>{{plural count.posts empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}</small>
+				{{#if description}}
+				<p class="item-excerpt">
+					{{description}}
+				</p>
+				{{/if}}
+			</div>
+		</div>
+		{{/foreach}}
+	</div>
+	{{/if}}
+	{{/get}}
+</div>
+{{/post}}

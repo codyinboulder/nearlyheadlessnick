@@ -1,0 +1,32 @@
+{{!< default}}
+{{#author}}
+<div class="archive-section{{#if profile_image}} is-image{{/if}}{{>partial_mode}}">
+	{{#if profile_image}}
+	<div class="archive-image global-image">
+		{{>images/other_image other_image=profile_image alt=name}}
+	</div>
+	{{/if}}
+	<h1 class="archive-title global-title">{{name}}</h1>
+	{{#has any="location,website,facebook,twitter"}}
+	<div class="archive-social">
+		{{#if location}}
+		<span>{{>icons/site/pin}}{{location}}</span>
+		{{/if}}
+		{{#if website}}
+		<a href="{{website}}" aria-label="link Website">{{>icons/site/link}}{{t "Website"}}</a>
+		{{/if}}
+		{{#if facebook}}
+		<a href="{{facebook_url}}" aria-label="link Facebook">{{>icons/social/facebook}}Facebook</a>
+		{{/if}}
+		{{#if twitter}}
+		<a href="{{twitter_url}}" aria-label="link Twitter">{{>icons/social/twitter}}Twitter</a>
+		{{/if}}
+	</div>
+	{{/has}}
+	{{#if bio}}
+	<p class="archive-excerpt global-excerpt">{{bio}}</p>
+	{{/if}}
+</div>
+{{/author}}
+{{>loop}}
+{{pagination}}

@@ -1,0 +1,39 @@
+{{#if @custom.content_api_key_for_search}}
+{{#if is_search_core}}
+<div class="search-section">
+	<div class="search-wrap">
+		<div class="search-content{{>partial_mode}}">
+			<form class="search-form" onsubmit="return false">
+				<input class="search-input" type="text" placeholder="{{t "Search"}}">
+				<div class="search-meta">
+					<span class="search-info">{{t "Please enter at least 3 characters"}}</span>
+					<span class="search-counter is-hide">
+						<span class="search-counter-results">0</span>
+						{{t "Results for your search"}}
+					</span>
+				</div>
+				<span class="search-close">{{>icons/site/close}}</span>
+			</form>
+			<div class="search-results global-image"></div>
+		</div>
+	</div>
+	<div class="search-overlay"></div>
+</div>
+{{#contentFor "script_js"}}
+<script>
+const options = {
+	api:'{{@site.url}}/ghost/api/content/posts/?key='+"{{@custom.content_api_key_for_search}}"+'&limit=all&fields=url,title,feature_image,published_at,custom_excerpt,visibility,html',
+	threshold: 0.1,
+	ignoreLocation: true,
+	keys: ['title','custom_excerpt','html'],
+	images: true,
+	limit: 14
+}
+</script>
+{{/contentFor}}
+{{else if is_mobile}}
+<span class="header-search search-open is-mobile">{{>icons/site/search}}</span>
+{{else if is_desktop}}
+<li class="header-search search-open is-desktop global-button"><span>{{>icons/site/search}}{{t "Search"}}</span></li>
+{{/if}}
+{{/if}}

@@ -1,0 +1,17 @@
+{{#get "posts" limit="6" filter="tag:food+feature_image:-null" include="authors" as |special_posts|}}
+{{#if special_posts}}
+{{>related label=(t "<h2>{start-bold}Food{end-bold}</h2>" start-bold="<span>" end-bold="</span>")}}
+{{/if}}
+{{/get}}
+
+{{#get "posts" limit="6" filter="tag:activities+feature_image:-null" include="authors" as |special_posts|}}
+{{#if special_posts}}
+{{>related label=(t "<h2>{start-bold}Activities{end-bold}</h2>" start-bold="<span>" end-bold="</span>")}}
+{{/if}}
+{{/get}}
+
+{{#get "posts" limit="6" filter="tag:services+feature_image:-null" include="authors" as |special_posts|}}
+{{#if special_posts}}
+{{>related label=(t "<h2>{start-bold}Services{end-bold}</h2>" start-bold="<span>" end-bold="</span>")}}
+{{/if}}
+{{/get}}

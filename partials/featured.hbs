@@ -1,0 +1,20 @@
+{{#get "posts" limit="15" filter="featured:true+feature_image:-null" include="authors,tags" as |slider|}}
+{{#if slider}}
+<div class="featured-section">
+	<div class="global-padding">
+		<div class="featured-subtitle global-subtitle">
+			<small class="global-subtitle-title">{{{t "<h1>Best of the {start-bold}Northwoods{end-bold}</h1>" start-bold="<span>" end-bold="</span>"}}}</small>
+			<div class="featured-navigation">
+				<button class="featured-btn-previous" aria-label="Previous">{{>icons/site/arrow_left}}</button>
+				<button class="featured-btn-next" aria-label="Next">{{>icons/site/arrow_right}}</button>
+			</div>
+		</div>
+		<div class="featured-wrap">
+			{{#foreach slider}}
+			{{>item is_featured=true show_excerpt=true}}
+			{{/foreach}}
+		</div>
+	</div>
+</div>
+{{/if}}
+{{/get}}

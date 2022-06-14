@@ -1,0 +1,8 @@
+{{#if @site.members_enabled}}
+{{#if @member}}
+<li class="account"><a href="{{@site.url}}/#content" class="global-button">{{t "Explore"}}</a></li>
+{{else}}
+<li class="signup"><a href="{{@site.url}}/#content" class="global-button">{{t "Explore"}}</a></li>
+{{/if}}
+{{/if}}
+

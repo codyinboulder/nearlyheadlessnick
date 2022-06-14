@@ -1,0 +1,32 @@
+{{!< default-custom}}
+{{#post}}
+<div class="custom-wrap{{>partial_mode}}">
+	{{#if feature_image}}
+	<div class="custom-image global-bg-image" style="background-image: url({{feature_image}})"></div>
+	{{/if}}
+	<div class="custom-container">
+		<div class="custom-logo-wrap">
+			<div class="custom-logo">
+				{{>logo}}
+			</div>
+		</div>
+		<div class="custom-content">
+			<form data-members-form="signin">
+				<h1 class="custom-title global-title">{{title}}</h1>
+				<input data-members-email type="email" placeholder="{{t "Your email address"}}" aria-label="{{t "Your email address"}}" required>
+				<button class="global-button" type="submit">{{t "Send login link"}}</button>
+				<div>
+					<small class="alert-loading global-alert">{{t "Processing your application"}}</small>
+					<small class="alert-error global-alert">{{t "There was an error sending the email"}}</small>
+				</div>
+				<small class="global-question">{{t "Don’t have an account yet?"}} <a href="{{@site.url}}/signup/">{{t "Sign up"}}</a></small>
+			</form>
+			<div class="alert-success">
+				<h2 class="custom-alert-title">{{t "Great!"}}</h2>
+				<p>{{t "Please check your inbox and click the link to complete signin."}}</p>
+				<a href="{{@site.url}}" class="global-button">{{t "Back to homepage"}}</a>
+			</div>
+		</div>
+	</div>
+</div>
+{{/post}}

@@ -1,0 +1,29 @@
+{{#if @site.members_enabled}}
+{{^if @member}}
+{{^if is_hero}}
+<div class="footer-subscribe">
+<h3 class="global-title">{{{t "Get the {start-bold}Latest{end-bold}" start-bold="<span>" end-bold="</span>"}}}</h3>
+{{/if}}
+	<div class="subscribe-section">
+		<div class="subscribe-wrap">
+			<form data-members-form="subscribe" class="subscribe-form">
+				<input data-members-email type="email" placeholder="{{t "Your email address"}}" aria-label="{{t "Your email address"}}" required>
+				<button class="global-button" type="submit">{{t "Get Discounts"}}</button>
+			</form>
+			{{#if is_hero}}
+			<div class="subscribe-form-caption">
+				{{t "Get the email newsletter and unlock access to members-only content and updates"}}
+			</div>
+			{{/if}}
+			<div class="subscribe-alert">
+				<small class="alert-loading global-alert">{{t "Processing your application"}}</small>
+				<small class="alert-success global-alert">{{t "Please check your inbox and click the link to confirm your subscription."}}</small>
+				<small class="alert-error global-alert">{{t "There was an error sending the email"}}</small>
+			</div>
+		</div>
+	</div>
+{{^if is_hero}}
+</div>
+{{/if}}
+{{/if}}
+{{/if}}

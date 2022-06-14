@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}"{{#match @custom.color_scheme "Dark"}} class="dark-mode"{{else match @custom.color_scheme "Auto: Light/Dark"}} class="auto-dark-mode"{{else match @custom.color_scheme "Partial Dark"}} class="partial-dark-mode"{{else match @custom.color_scheme "Auto: Partial Dark/Dark"}} class="auto-partial-dark-mode"{{/match}}>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>{{meta_title page=(t "meta-page")}}</title>
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{{>services/google_fonts}}
+		<link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}">
+		{{{block "fonts_css"}}}
+		{{ghost_head}}
+		{{#if @custom.global_background_color_in_hex_string}}
+		<style>:root {--ghost-bg-color: {{@custom.global_background_color_in_hex_string}};}</style>
+		{{/if}}
+	</head>
+	<body class="{{body_class}}{{#if @custom.accent_color_buttons}} global-accent-color-buttons{{/if}}">
+		<div class="global-wrap">
+			<div class="global-content">
+				{{>header}}
+				<main class="global-main">
+					{{{body}}}
+				</main>
+				{{>footer}}
+			</div>
+		</div>
+		{{>members/notifications}}
+		{{>search is_search_core=true}}
+		<script src="{{asset "js/global.js"}}"></script>
+		{{#if pagination.pages}}
+		<script src="{{asset "js/index.js"}}"></script>
+		{{/if}}
+		{{#is "post,page"}}
+		<script src="{{asset "js/post.js"}}"></script>
+		{{/is}}
+		{{{block "script_js"}}}
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js"></script>
+		<script>
+    tocbot.init({
+        // Where to render the table of contents.
+        tocSelector: '.gh-toc',
+        // Where to grab the headings to build the table of contents.
+        contentSelector: '.post-content',
+        // Which headings to grab inside of the contentSelector element.
+        headingSelector: 'h1, h2, h3, h4',
+    });
+</script>
+		{{ghost_foot}}
+	</body>
+</html>

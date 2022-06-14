@@ -1,0 +1,16 @@
+{{!< default}}
+{{#tag}}
+<div class="archive-section{{#if feature_image}} is-image{{/if}}{{>partial_mode}}">
+	{{#if feature_image}}
+	<div class="archive-image global-image">
+		{{>images/other_image other_image=feature_image alt=name}}
+	</div>
+	{{/if}}
+	<h1 class="archive-title global-title is-tag">{{name}}<span>{{../pagination.total}}</span></h1>
+	{{#if description}}
+	<p class="archive-excerpt global-excerpt">{{description}}</p>
+	{{/if}}
+</div>
+{{/tag}}
+{{>loopold}}
+{{pagination}}

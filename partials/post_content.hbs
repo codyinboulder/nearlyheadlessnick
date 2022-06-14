@@ -1,0 +1,37 @@
+{{^is "page"}}
+{{#if access}}<progress class="post-progress"></progress>{{/if}}
+{{/is}}
+<article class="post-section">
+	{{>post_header}}
+	<div class="post-content global-padding">
+		{{#if access}}
+		<div class="gh-toc"></div>
+		{{content}}
+		{{^is "page"}}
+		{{>post_share}}
+		{{/is}}
+		{{else}}
+		{{#if html}}
+		<div class="members-cta-teaser">
+			{{{html}}}
+		</div>
+		{{/if}}
+		{{>members/cta}}
+		{{/if}}
+	</div>
+</article>
+{{^is "page"}}
+{{>post_navigation}}
+<div class="comments-section global-padding">
+{{#if access}}
+	{{>services/disqus}}
+{{/if}}
+</div>
+{{#if primary_tag}}
+{{#get "posts" limit="6" filter="tags:{{primary_tag.slug}}+id:-{{id}}+feature_image:-null" include="authors" as |special_posts|}}
+	{{#if special_posts}}
+		{{>related label=(t "You might {start-bold}also like{end-bold}" start-bold="<span>" end-bold="</span>")}}
+	{{/if}}
+{{/get}}
+{{/if}}
+{{/is}}

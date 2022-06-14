@@ -1,0 +1,11 @@
+<div class="post-share-section">
+	<small>{{t "Share this post"}}</small>
+	<div class="post-share-wrap">
+		<a href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}" target="_blank" rel="noopener" aria-label="Share on Twitter">{{>icons/social/twitter}}</a>
+		<a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" target="_blank" rel="noopener" aria-label="Share on Facebook">{{>icons/social/facebook}}</a>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&amp;title={{encode title}}&amp;url={{url absolute="true"}}" target="_blank" rel="noopener" aria-label="Share on Linkedin">{{>icons/social/linkedin}}</a>
+		<a href="javascript:" class="post-share-link" id="copy" data-clipboard-target="#copy-link" aria-label="Copy link">{{>icons/site/copy}}</a>
+		<small class="share-link-info global-alert">{{t "The link has been copied!"}}</small>
+	</div>
+	<input type="text" value="{{url absolute="true"}}" id="copy-link" aria-label="Copy link input">
+</div>

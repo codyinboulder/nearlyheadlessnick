@@ -1,0 +1,68 @@
+<div id="content">
+  <h2>We Know the Northwoods</h2><br>
+  <div class="container">
+    <div class="flipper">
+      <div class="front">
+				<img src="/content/images/food.jpg" alt="food">
+				<p class="caption">Food</p>
+			</div>
+			<div class="back">
+			<p class="description"><a href="/topic/food/">Read More</a></p>
+			</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="flipper">
+      <div class="front">
+        <img src="/content/images/activities.jpg" alt="activities">
+        <p class="caption">Activities</p>
+      </div>
+      <div class="back">
+        <p class="description"><a href="/topic/activities/">Read More</a></p>
+		</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="flipper">
+      <div class="front">
+        <img src="/content/images/services.jpg" alt="Red Purple and Yellow Tulip">
+        <p class="caption">Services</p>
+      </div>
+      <div class="back">
+        <p class="description"><a href="/topic/services/">Read More</a></p>
+		</div>
+    </div>
+  </div>
+</div>
+<div class="loop-section global-padding">
+	<div class="{{#is "tag,author"}}global-subtitle{{else if is_error}}global-subtitle{{else}}loop-subtitle{{/is}}">
+		<small class="{{#is "tag,author"}}global-subtitle-title{{else if is_error}}global-subtitle-title{{else}}loop-subtitle-title global-title{{/is}}">
+		{{^if is_error}}
+		{{^is "tag,author"}}
+		{{#get "authors" limit="6" include="count.posts" order="count.posts desc"}}
+		<div class="global-authors option{{#foreach authors}}{{#if count.posts}}{{#has number="1"}}-1{{else has number="2"}}-2{{else has number="6"}}-3{{/has}}{{/if}}{{/foreach}}">
+			<div>
+				{{#foreach authors to="5"}}
+				{{#if count.posts}}
+				<div class="global-item-author{{#if profile_image}} is-image global-image{{/if}}">
+					<a href="{{url}}" class="global-link" title="{{name}}"></a>
+					{{#if profile_image}}
+					{{>images/other_image other_image=profile_image alt=name}}
+					{{else}}
+					<span>{{name}}</span>
+					{{/if}}
+				</div>
+				{{/if}}
+				{{/foreach}}
+			</div>
+			<small>{{t "Meet our author"}}</small>
+			<small>{{t "Meet our authors"}}</small>
+			<small>{{t "Meet our top authors"}}</small>
+		</div>
+		{{/get}}
+		{{/is}}
+		{{/if}}
+	</div>
+	</div>
