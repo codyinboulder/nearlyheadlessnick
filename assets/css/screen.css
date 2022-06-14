@@ -4082,7 +4082,6 @@ textarea::placeholder {
    14.Author & Tag page
    -------------------------------------------------------------------------- */
 .archive-section {
-   padding: 4vh 0 11vh;
    text-align: center;
    color: var(--color-font-one);
    background-color: var(--color-body-partial);
@@ -4094,7 +4093,7 @@ textarea::placeholder {
 
 .archive-social,
 .archive-excerpt {
-   margin: 3vh auto 0;
+   margin: 1vh auto 0;
 }
 
 .archive-title,
@@ -4111,15 +4110,15 @@ textarea::placeholder {
 /* Image
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
 .archive-image {
-   width: 180px;
-   height: 180px;
+   width: 120px;
+   height: 120px;
    margin: 0 auto 20px;
 }
 
 .archive-image img {
    box-sizing: border-box;
    padding: 10px;
-   border-radius: 100%;
+   border-radius: 10px;
 }
 
 /* Title & Counter
