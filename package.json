@@ -1,11 +1,11 @@
 {
-    "name": "nearly headless nick",
+    "name": "nearly_headless_nick",
     "demo": "https://basho.fueko.net",
     "version": "0.8",
     "author": {
         "name": "cody",
         "email": "cody@lindyhealth.com",
-        "url": "lindyhealth.com"
+        "url": "https://lindyhealth.com"
     },
     "keywords": [
         "ghost-theme"
