@@ -1,5 +1,4 @@
 name: Deploy Theme
-theme-name: Nearly Headless Nick
 on:
   push:
     branches:
